@@ -62,7 +62,7 @@ export interface KitsSectionProps {
 
 export default function KitsSection({ kits, station, copy }: KitsSectionProps) {
   const [open, setOpen] = useState(false);
-  const carousel = useCarousel(kits.length);
+  const carousel = useCarousel(kits.length, "kits");
 
   if (kits.length === 0) return null;
 
@@ -71,6 +71,7 @@ export default function KitsSection({ kits, station, copy }: KitsSectionProps) {
   return (
     <section
       id="kits"
+      data-carousel
       className="relative py-12 lg:py-[45vh]"
     >
       <StationPanel routeSide="right">

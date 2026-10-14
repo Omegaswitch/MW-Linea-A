@@ -57,7 +57,7 @@ export default function RendersSection({
     [renders.items],
   );
 
-  const carousel = useCarousel(items.length);
+  const carousel = useCarousel(items.length, "renders");
 
   if (items.length === 0) return null;
 
@@ -66,7 +66,11 @@ export default function RendersSection({
   const position = `${pad(carousel.index + 1)} / ${pad(items.length)}`;
 
   return (
-    <section id="renders" className="relative py-12 lg:py-[45vh]">
+    <section
+      id="renders"
+      data-carousel
+      className="relative py-12 lg:py-[45vh]"
+    >
       <StationPanel routeSide="right">
         <StationHeader station={station} />
 
